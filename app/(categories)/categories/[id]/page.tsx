@@ -11,13 +11,16 @@ interface Product {
 }
 
 // Async server component: Next.js expects this
-const ProductPage = async ({ params }: { params: { id: string } }) => {
-  const res = await fetch(`https://dummyjson.com/products/${params.id}`, { cache: 'no-store' })
+const ProductPage = async ({ params }: { params: Promise<{ id: string }> }) => {
+  // Await params first
+  const { id } = await params
+  
+  const res = await fetch(`https://dummyjson.com/products/${id}`, { cache: 'no-store' })
   const product: Product = await res.json()
 
   return (
     <div className="p-8">
-      <h1 className="text-2xl font-semibold mb-2">Category ID: {params.id}</h1>
+      <h1 className="text-2xl font-semibold mb-2">Category ID: {id}</h1>
       <h2 className="text-3xl font-bold">{product.title}</h2>
       <img
         src={product.thumbnail}

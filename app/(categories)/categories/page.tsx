@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { Input } from '@/components/ui/input';
 import { useSearchParams } from 'next/navigation';
 
@@ -10,16 +10,14 @@ async function getProducts() {
   const data = await res.json();
 
   return data.products;
-
-
 }
 
-const Categories = () => {
+// Extract the component that uses useSearchParams
+function CategoriesContent() {
   const searchParams = useSearchParams();
   const defaultType = searchParams.get('type') || '';
   const [products, setProducts] = useState<{ id: number; name: string; thumbnail: string; category: string; title: string }[]>([]);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-
 
   useEffect(() => {
     getProducts().then(setProducts);
@@ -37,7 +35,6 @@ const Categories = () => {
             onChange = { (e) => {
                 const value = e.target.value;
 
-
                 if (value ===''){
                     getProducts().then(setProducts);
                     return;
@@ -51,34 +48,33 @@ const Categories = () => {
           />
           <div className="grid grid-cols-4 gap-4 w-full">
             {['Groceries', 'Beauty', 'Fragrances', 'Furniture'].map((item) => (
-  <label key={item} className="flex items-center space-x-2">
-    <input
-      type="checkbox"
-      className="w-4 h-4"
-      onChange={(e) => {
-        const isChecked = e.target.checked;
-        const updated = isChecked
-          ? [...selectedCategories, item]
-          : selectedCategories.filter(c => c !== item);
+              <label key={item} className="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  className="w-4 h-4"
+                  onChange={(e) => {
+                    const isChecked = e.target.checked;
+                    const updated = isChecked
+                      ? [...selectedCategories, item]
+                      : selectedCategories.filter(c => c !== item);
 
-        setSelectedCategories(updated);
+                    setSelectedCategories(updated);
 
-        if (updated.length === 0) {
-          getProducts().then(setProducts);
-        } else {
-          setProducts(products.filter(product =>
-            updated.map(i => i.toLowerCase()).includes(product.category.toLowerCase())
-          ));
-        }
-      }}
-    />
-    <span className="text-gray-700 text-sm">{item}</span>
-  </label>
-))}
+                    if (updated.length === 0) {
+                      getProducts().then(setProducts);
+                    } else {
+                      setProducts(products.filter(product =>
+                        updated.map(i => i.toLowerCase()).includes(product.category.toLowerCase())
+                      ));
+                    }
+                  }}
+                />
+                <span className="text-gray-700 text-sm">{item}</span>
+              </label>
+            ))}
           </div>
 
           <div className="grid grid-cols-4 gap-4 w-full mt-[20px] overflow-y-auto">
-
             {products.map((product) => (
               <Link
                 key={product.id}
@@ -86,19 +82,26 @@ const Categories = () => {
                 className="border-[1px] rounded-xl p-[10px] text-center"
               >
                 <img
-                //   src={product.image}
-                src = {product.thumbnail}
+                  src = {product.thumbnail}
                   alt={product.name}
                   className="w-full h-[150px] object-cover rounded-xl mb-[10px]"
                 />
                 <p className="text-sm font-medium">{product.name}</p>
               </Link>
             ))}
-
           </div>
         </div>
       </div>
     </div>
+  );
+}
+
+// Wrap with Suspense
+const Categories = () => {
+  return (
+    <Suspense fallback={<div className="p-[40px]">Loading...</div>}>
+      <CategoriesContent />
+    </Suspense>
   );
 };
 
