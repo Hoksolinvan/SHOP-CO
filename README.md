@@ -1,4 +1,4 @@
-Link[e-commerce-livid-nu.vercel.app]
+[Link](e-commerce-livid-nu.vercel.app)
 
 
 - Built with Next.js 14 (App Router)
@@ -6,3 +6,4 @@ Link[e-commerce-livid-nu.vercel.app]
 - UI Components from shadcn/ui
 - State Management using Redux Toolkit
 - API Integration with Axios
+
