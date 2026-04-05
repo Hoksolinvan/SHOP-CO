@@ -14,6 +14,8 @@ This is a fictional E-Commerce website that attempts to mimic contemporary shopp
 - **DummyJSON API** ![DummyJSON](https://img.shields.io/badge/DummyJSON-FF6F00?style=flat)
 - **Tailwind CSS** ![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white)
 - **ShadCN UI** ![shadcn/ui](https://img.shields.io/badge/shadcn/ui-000000?style=flat)
+- **NPM** ![npm](https://img.shields.io/badge/npm-CB3837?style=flat&logo=npm&logoColor=white)
+- **Typescript** ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
 
 # 💥 Deployment:
 
