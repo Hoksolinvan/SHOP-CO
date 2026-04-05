@@ -2,13 +2,27 @@
 <img width="218" height="74" alt="Screenshot 2026-04-05 at 3 51 17 PM" src="https://github.com/user-attachments/assets/d498de5c-4957-4f79-9445-d348cd64877f" />
 
 
-[Link](https://e-commerce-livid-nu.vercel.app/)
+# ✅ SHOP.CO
 
+This is a fictional E-Commerce website that attempts to mimic contemporary shopping websites found on the internet. Modern design and styling techinques are replicated and applied to accentuate the growing trend for smooth-transitioned, well-ordered typeset designs.
 
-- Built with Next.js 14 (App Router)
-- Styling with TailwindCSS
-- UI Components from shadcn/ui
-- State Management using Redux Toolkit
-- API Integration with Axios
+# 📚 Techstack Used:
+
+- **Nextjs 14* ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=nextdotjs&logoColor=white)
+- **Axios** ![Axios](https://img.shields.io/badge/Axios-5A29E4?style=flat&logo=axios&logoColor=white)
+- **Redux** ![Redux](https://img.shields.io/badge/Redux-764ABC?style=flat&logo=redux&logoColor=white)
+- **DummyJSON API** ![DummyJSON](https://img.shields.io/badge/DummyJSON-FF6F00?style=flat)
+- **Tailwind CSS** ![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white)
+- **ShadCN UI** ![shadcn/ui](https://img.shields.io/badge/shadcn/ui-000000?style=flat)
+
+# 💥 Deployment:
+
+This project was deployed on Vercel ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat&logo=vercel&logoColor=white) and can be accessed via the hyperlink below:
+
+[SHOP.CO](https://e-commerce-livid-nu.vercel.app/)
+
+# Additional Notes:
+
+Thanks for showing up to my github page! Please let me know if you have any questions on the implementation detail of this website 😎
 
 
