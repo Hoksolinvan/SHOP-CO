@@ -23,6 +23,12 @@ This project was deployed on Vercel ![Vercel](https://img.shields.io/badge/Verce
 
 [SHOP.CO](https://e-commerce-livid-nu.vercel.app/)
 
+# Image Example:
+
+<img width="1376" height="755" alt="Screenshot 2026-04-10 at 7 54 22 PM" src="https://github.com/user-attachments/assets/0965cc31-d909-4562-8924-f272f08ef841" />
+
+
+
 # Additional Notes:
 
 Thanks for showing up to my github page! Please let me know if you have any questions on the implementation detail of this website 😎
